@@ -1,0 +1,102 @@
+openapi: 3.0.0
+x-stoplight:
+  id: ftki8vs5viyyl
+info:
+  title: Terbang Tinggi App
+  version: "1.0"
+  description: |
+    API Terbang Tinggi App For Final Project Backend Javascript Binar Academy.
+    We Also Provide Documentation On Postman :
+    https://documenter.getpostman.com/view/23103147/2s8YsxurAy
+    ---------------------------------------------------------------------------
+
+    Backend Team 
+    1. Achmad Fadilla - Universitas Nusa Mandiri
+  contact:
+    email: terbangtinggiapp@gmail.com
+    name: Developer
+servers:
+  - description: ""
+    url: "http://localhost:3001"
+paths:
+  /auth/register:
+    post:
+      summary: Register User
+      tags:
+        - Auth
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      operationId: post-auth-register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              Example 1:
+                value:
+                  username: john_123
+                  email: johnsihombing80@gmail.com
+                  password: tes1234
+                  confirmPassword: tes1234
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+  /auth/login:
+    post:
+      summary: Login User
+      tags:
+        - Auth
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Example 1:
+                  value:
+                    status: true
+                    message: success
+                    data:
+                      id: 73
+                      email: johnsihombing80@gmail.com
+                      role: User
+                      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJuYW1lIjoiam9obl8xMjMiLCJlbWFpbCI6ImpvaG5zaWhvbWJpbmc4MEBnbWFpbC5jb20iLCJyb2xlIjoiVXNlciIsInVzZXJfdHlwZSI6IkJhc2ljIiwiaXNfdmVyaWZpZWQiOjEsImlhdCI6MTY3MDA1Njc3N30.wSw7sI3l24RQP6XOeVne93Wu2xb-AfYOm2yhyn-i-Gc
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                Example 1: {}
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      operationId: post-auth-login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+            examples:
+              Example 1:
+                value:
+                  email: johnsihombing80@gmail.com
+                  password: tes1234
+  
